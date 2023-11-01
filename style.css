@@ -28,8 +28,9 @@ body {
 
 .image:hover {
     filter: brightness(60%);
+    cursor: pointer;
 }
-
+/* Why don't the pointers disappear for other buttons? */
 
 .hover_on_photo {
     pointer-events: none;
@@ -55,18 +56,6 @@ body {
     font-size: 18px;
 }
 
-.image:hover + .hover_on_photo > .buttton_save {
-    visibility: visible;
-    transform: translateY(-420px);
-    pointer-events: none;
-}
-
-.image:hover + .hover_on_photo > .link_container {
-    visibility: visible;
-    transform: translateY(430px);
-    pointer-events: none;
-    opacity: 85%;
-}
 
 .link_container {
     position: absolute;
@@ -110,10 +99,6 @@ body {
     opacity: 85%;
 }
 
-.image:hover + .hover_on_photo > .down_container {
-    visibility: visible;
-    transform: translateY(480px);
-}
 
 .ellipsis_container {
     height: 40px;
@@ -128,16 +113,37 @@ body {
     background-color: white;
     opacity: 85%;
 }
-
-.image:hover + .hover_on_photo > .ellipsis_container {
-    visibility: visible;
-    transform: translateY(480px);
-
-}
-
-
-.image:hover + .hover_on_photo > .buttton_save:hover {
+.image:hover + .hover_on_photo > .buttton_save {
+    pointer-events:none;
     visibility: visible;
     transform: translateY(-420px);
     pointer-events: none;
+    transition: transform 1s ease-in;
+}
+
+.image:hover + .hover_on_photo > .link_container {
+    visibility: visible;
+    transform: translateY(430px);
+    pointer-events: none;
+    opacity: 85%;
+    transition: transform 1s ease-in;
+}
+/* I entered 1 second for all buttons,
+but why is this button the only one that drops so late?. */
+
+
+.image:hover + .hover_on_photo > .down_container {
+    pointer-events:none;
+    visibility: visible;
+    transform: translateY(480px);
+    transition: transform 1s ease-in;
+}
+
+
+
+.image:hover + .hover_on_photo > .ellipsis_container {
+    pointer-events:none;
+    visibility: visible;
+    transform: translateY(480px);
+    transition: transform 1s ease-in;
 }
