@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial,sans-serif;
+    height: 100vh;
+}
+
+.webpage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.main_container {
+    height: 500px;
+    margin: 50px;
+    position: relative;
+}
+
+.image {
+    height: 100%;
+    border-radius: 30px;
+}
+
+.image:hover {
+    filter: brightness(60%);
+}
+
+
+.hover_on_photo {
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.buttton_save {
+    height: 55px;
+    width: 85px;
+    bottom: 10px;
+    right: 15px;
+    position: absolute;
+    background-color: #D32D2F;
+    border-radius: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.save {
+    color: white;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.image:hover + .hover_on_photo > .buttton_save {
+    visibility: visible;
+    transform: translateY(-420px);
+    pointer-events: none;
+}
+
+.image:hover + .hover_on_photo > .link_container {
+    visibility: visible;
+    transform: translateY(430px);
+    pointer-events: none;
+    opacity: 85%;
+}
+
+.link_container {
+    position: absolute;
+    display: flex;
+    border-radius: 30px;
+    height: 40px;
+    width: 150px;
+    left: 15px;
+    top: 13px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.link_container > span {
+    color: black;
+    margin-left: 5%;
+    margin-right: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.link_container > svg {
+    transform: rotate(45deg);
+    margin-left: 10px;
+}
+
+.down_container {
+    height: 40px;
+    width: 40px;
+    top: -7%;
+    right: 23%;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    opacity: 85%;
+}
+
+.image:hover + .hover_on_photo > .down_container {
+    visibility: visible;
+    transform: translateY(480px);
+}
+
+.ellipsis_container {
+    height: 40px;
+    width: 40px;
+    top: -7%;
+    right: 5%;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    opacity: 85%;
+}
+
+.image:hover + .hover_on_photo > .ellipsis_container {
+    visibility: visible;
+    transform: translateY(480px);
+
+}
+
+
+.image:hover + .hover_on_photo > .buttton_save:hover {
+    visibility: visible;
+    transform: translateY(-420px);
+    pointer-events: none;
+}
